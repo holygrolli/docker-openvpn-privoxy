@@ -3,16 +3,15 @@ name: Docker Image CI
 on:
   push:
     branches:
-
     tags:
       - '*'
-
+# permissions are needed if pushing to ghcr.io
+permissions: 
+  contents: read
+  packages: write
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
       # Get the repository's code
       - name: Checkout
